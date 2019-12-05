@@ -1,0 +1,9 @@
+[
+  {
+    "type": "input",
+    "name": "url",
+    "placeholder": "URL",
+    "validator": "text",
+    "required": true
+  }
+]

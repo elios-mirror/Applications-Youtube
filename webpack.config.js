@@ -1,7 +1,10 @@
 const path = require('path');
+var nodeExternals = require('webpack-node-externals');
+const NodemonPlugin = require('nodemon-webpack-plugin');
 
 module.exports = {
-    target:'node',
+    target: 'node',
+    externals: [nodeExternals()],
     entry: './src/index.ts',
     module: {
         rules: [
@@ -26,5 +29,8 @@ module.exports = {
         filename: 'index.js',
         libraryTarget: 'commonjs',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins: [
+        new NodemonPlugin()
+    ]
 };
